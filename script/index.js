@@ -1,6 +1,8 @@
 let addOutput = document.getElementById('addOutput');
 let calButton = document.getElementById('calButton');
 
+let numArray = [1, 7, 11, 22, 44, 77, 99, 101, 111];
+
 // adding function
 function addNumbers(add) {
   let sum = 0;
@@ -17,9 +19,6 @@ function addNumbers(add) {
   }
   return sum;
 }
-
-let numArray = [1, 7, 11, 22, 44, 77, 99, 101, 111];
-
 calButton.addEventListener('click', function () {
   let sum = addNumbers(numArray);
   addOutput.value = (typeof sum === 'number') ? sum : sum; 
