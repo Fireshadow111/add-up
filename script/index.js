@@ -1,21 +1,26 @@
-//Assigning variables
-        let addOutput = document.getElementById('addOutput');
-        let calButton = document.getElementById('calButton');
+let addOutput = document.getElementById('addOutput');
+let calButton = document.getElementById('calButton');
 
-      //Creating array
-        let addArray = [1, 7, 11, 22, 44, 77];
+// adding function
+function addNumbers(add) {
+  let sum = 0;
+  // looping through each number in the array
+  for (let number of add) {
 
-        function addNumbers(add) {
-          let sum = 0;
-          for (let number of add) {
-            if (typeof number !== 'number') {
-              return "Provide only numbers";
-            }
-            sum += number;
-          }
-          return sum;
-        }
-        
-        let numArray = [1, 7, 11, 22, 44, 77];
-        let sum = addNumbers(numArray);
-        console.log(sum);
+    // validation and checking if it is a number
+    if (typeof number !== 'number') {
+      return "Enter numbers only";
+    }
+
+    // Adding
+    sum += number;
+  }
+  return sum;
+}
+
+let numArray = [1, 7, 11, 22, 44, 77, 99, 101, 111];
+
+calButton.addEventListener('click', function () {
+  let sum = addNumbers(numArray);
+  addOutput.value = (typeof sum === 'number') ? sum : sum; 
+});
